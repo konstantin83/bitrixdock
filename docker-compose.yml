@@ -13,7 +13,7 @@ services:
         volumes_from:
             - source
         ports:
-            - '${INTERFACE}:9000:9000'
+#             - '${INTERFACE}:9000:9000'
         links:
             - db
             - memcached
@@ -83,7 +83,7 @@ services:
             - db:/var/lib/mysql
             - ./data/memcached:/var/lib/memcached
             - ./www/html:/var/www/html
-            - ${SITE_PATH}:/var/www/bitrix
+            - ./www/bitrix:/var/www/bitrix
             - /etc/localtime:/etc/localtime/:ro
         networks:
             - bitrix
